@@ -10,11 +10,13 @@ public:
         string result = "";
         
         for(char &ch : s) {
+            if(result.size()!=0){
             if(ch + 32 == result.back() || ch - 32 == result.back()) {
                 result.pop_back();
-            } else {
+                continue;
+            } 
+               }
                 result.push_back(ch);
-            }
         }
         
         return result;
